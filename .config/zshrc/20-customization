@@ -1,0 +1,71 @@
+# -----------------------------------------------------
+# INSTALL ZSH PLUGINS
+# -----------------------------------------------------
+# Function to ensure zsh plugins are installed
+ensure_plugin_installed() {
+    local plugin_url=$1
+    local plugin_dir=$2
+    if [[ ! -d $plugin_dir ]]; then
+        echo "Installing plugin from $plugin_url into $plugin_dir..."
+        git clone --depth 1 "$plugin_url" "$plugin_dir"
+    else
+    fi
+}
+
+# Define the location of your ZSH custom plugins directory
+ZSH_CUSTOM=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}
+
+# Ensure each plugin is installed
+ensure_plugin_installed https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+ensure_plugin_installed https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+ensure_plugin_installed https://github.com/zdharma-continuum/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
+ensure_plugin_installed https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+
+# -----------------------------------------------------
+# CUSTOMIZATION
+# -----------------------------------------------------
+POSH=bubblesextra
+
+# -----------------------------------------------------
+# Prompt
+# -----------------------------------------------------
+# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+eval "$(oh-my-posh init zsh --config /home/brandon/.config/ohmyposh/bubblesextra.omp.json)"
+
+# Shipped Theme
+# eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/agnoster.omp.json)"
+# -----------------------------------------------------
+# oh-myzsh themes: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# -----------------------------------------------------
+# ZSH_THEME=robbyrussell
+
+# -----------------------------------------------------
+# oh-myzsh plugins
+# -----------------------------------------------------
+plugins=(
+    git
+    sudo
+    web-search
+    archlinux
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    fast-syntax-highlighting
+    copyfile
+    copybuffer
+    dirhistory
+)
+
+# Set-up oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# -----------------------------------------------------
+# Set-up FZF key bindings (CTRL R for fuzzy history finder)
+# -----------------------------------------------------
+source <(fzf --zsh)
+
+# zsh history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
