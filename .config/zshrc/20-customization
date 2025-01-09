@@ -74,3 +74,5 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+#Source Nix
+source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
