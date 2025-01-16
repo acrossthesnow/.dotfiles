@@ -1,5 +1,4 @@
 Dotfiles Setup Script
-![](https://github.com/acrossthesnow/.dotfiles/blob/main/logo.png)
 This repository contains a setup script for managing your dotfiles. The script symlinks configuration files and directories from the repository to your home directory, ensuring a consistent development environment.
 Features
 
