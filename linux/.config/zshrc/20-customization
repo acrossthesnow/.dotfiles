@@ -13,7 +13,7 @@ ensure_plugin_installed() {
 }
 
 # Define the location of your ZSH custom plugins directory
-ZSH_CUSTOM=${ZSH_CUSTOM:-$HOME/.config/oh-my-zsh/custom}
+ZSH_CUSTOM=${ZSH_CUSTOM:-$HOME/oh-my-zsh/custom}
 
 # Ensure each plugin is installed
 ensure_plugin_installed https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
@@ -56,7 +56,7 @@ plugins=(
 )
 
 # Set-up oh-my-zsh
-# source $ZSH/oh-my-zsh.sh
+ source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------
 # DIRENV setup
