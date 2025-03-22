@@ -5,7 +5,7 @@ HOME_DIR="$HOME"
 
 # Get the directory where the script resides
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-REPO_DIR="$(dirname "$SCRIPT_DIR)"
+REPO_DIR="$(dirname $SCRIPT_DIR)"
 
 # Validate input argument
 if [[ "$1" != "macos" && "$1" != "linux" ]]; then

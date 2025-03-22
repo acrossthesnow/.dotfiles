@@ -71,3 +71,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+ fi
+
