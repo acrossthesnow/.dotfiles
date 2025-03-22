@@ -1,1 +1,1 @@
-firefox-dev
+/home/brandon/.local/bin/firefox-dev/firefox
