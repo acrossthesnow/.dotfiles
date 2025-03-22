@@ -1,2 +1,9 @@
 *oh-my-zsh/plugins*
 linux/.config/oh-my-zsh
+.DS_Store
+
+# NEOVIM Ignores
+.config/nvim/lazy-lock.json
+tags
+spell/
+
